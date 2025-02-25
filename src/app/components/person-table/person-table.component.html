@@ -24,9 +24,9 @@
         <a class="btn btn-primary me-4" routerLink="/cadastrar-editar-pessoas">
           <i class="fa fa-pencil" aria-hidden="true"></i>
         </a>
-        <a class='btn btn-danger' routerLink="#" >
+        <button class='btn btn-danger' (click)="deletarPessoa(pessoa.id)" >
           <i class="fa fa-trash" aria-hidden="true"></i>
-        </a>
+        </button>
       </td>
     </tr>
   </tbody>

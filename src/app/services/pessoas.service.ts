@@ -12,11 +12,14 @@ export class PessoasService {
   url = environment.url;
 
 
-  constructor(private http:HttpClient) {}
+  constructor(private readonly http:HttpClient) {}
 
   buscarTodasPessoas(): Observable<Ipessoas[]> {
     console.log("API Funcionando");
     return this.http.get<Ipessoas[]>(this.url);
+  }
 
+  deletarPessoa(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.url}/${id}`);
   }
 }
