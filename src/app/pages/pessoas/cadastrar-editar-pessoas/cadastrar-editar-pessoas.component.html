@@ -1,49 +1,51 @@
 
-<h1>
-  <!-- {{ id ? 'Editar' : 'Cadastrar' }} -->
-</h1>
-
 <form >
-<div class="mb-3">
-  <label for="title" class="form-label">Título</label>
+<div class="mb-3" [formGroup]="formGroupPessoas" (submit)="cadastrarPessoa()">
+  <label for="nome" class="form-label">Nome</label>
   <input
-    formControlName="title"
+    formControlName="nome"
     type="text"
     class="form-control"
-    id="title"
+    id="nome"
   />
 </div>
 <div class="mb-3">
-  <label for="description" class="form-label">Descrição</label>
-  <textarea
+  <label for="cep" class="form-label">CEP</label>
+  <input
     class="form-control"
-    id="description"
+    id="cep"
     rows="5"
-    formControlName="description"
-  ></textarea>
-</div>
-<div class="mb-3">
-  <label for="price" class="form-label">Preço</label>
-  <input
-    type="number"
-    class="form-control"
-    id="price"
-    formControlName="price"
+    formControlName="cep"
   />
 </div>
 <div class="mb-3">
-  <label for="stock" class="form-label">Estoque</label>
+  <label for="endereco" class="form-label">Endereço</label>
   <input
-    type="number"
     class="form-control"
-    id="stock"
-    formControlName="stock"
+    id="endereco"
+    formControlName="endereco"
+  />
+</div>
+<div class="mb-3">
+  <label for="cidade" class="form-label">Cidade</label>
+  <input
+    class="form-control"
+    id="cidade"
+    formControlName="cidade"
+  />
+</div>
+<div class="mb-1">
+  <label for="uf" class="form-label">UF</label>
+  <input
+    class="form-control"
+    id="uf"
+    formControlName="uf"
   />
 </div>
 <button
   type="submit"
   class="btn btn-primary"
-  [disabled]=""
+  [disabled]="!formGroupPessoas.valid"
 >
 <!-- {{ id ? 'Editar' : 'Cadastrar' }} -->
 </button>
