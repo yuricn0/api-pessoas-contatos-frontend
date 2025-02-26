@@ -1,4 +1,4 @@
-export interface Ipessoas {
+export interface IPessoas {
   id: number;
   nome: string;
   endereco: string;

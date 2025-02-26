@@ -9,12 +9,14 @@ import { CadastrarEditarPessoasComponent } from './pages/pessoas/cadastrar-edita
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PessoasService } from './services/pessoas.service';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListagemPessoasComponent,
     CadastrarEditarPessoasComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

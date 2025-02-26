@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
-import { Ipessoas } from 'src/app/interfaces/ipessoas';
+import { IPessoas } from 'src/app/interfaces/ipessoas';
 import { PessoasService } from 'src/app/services/pessoas.service';
 
 @Component({
@@ -10,12 +10,12 @@ import { PessoasService } from 'src/app/services/pessoas.service';
 })
 export class ListagemPessoasComponent {
 
-  pessoas: Ipessoas[] = [];
+  pessoas: IPessoas[] = [];
 
   constructor(private readonly pessoasService: PessoasService) { }
 
   ngOnInit(): void {
-    this.pessoasService.buscarTodasPessoas().subscribe((data: Ipessoas[]) => {
+    this.pessoasService.buscarTodasPessoas().subscribe((data: IPessoas[]) => {
       this.pessoas = data;
     });
   }

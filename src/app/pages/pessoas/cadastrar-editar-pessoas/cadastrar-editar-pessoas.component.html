@@ -1,7 +1,10 @@
-<div class="p-3 mt-2 text-center bg-body-tertiary rounded-3">
-  <h1 class="text-body-emphasis fs-1">
-    {{ id ? 'Editar' : 'CADASTRAR PESSOAS' }}
+<div class="p-5 mt-2 text-center bg-body-tertiary rounded-3">
+  <h1 class="text-body-emphasis fs-2">
+    {{ id ? "EDITAR" : "CADASTRAR" }}
   </h1>
+  <p class="col-lg-8 mx-auto fs-5 text-muted">
+    Preencha os campos abaixo para {{ id ? "editar" : "cadastrar" }} uma pessoa.
+  </p>
 </div>
 <div class="container mt-5">
   <div class="row justify-content-center">
@@ -13,55 +16,111 @@
       >
         <div class="col-md-12">
           <label for="inputNome" class="form-label">Nome</label>
-          <input formControlName="nome" type="text" class="form-control" id="inputNome" />
+          <input
+            formControlName="nome"
+            type="text"
+            class="form-control h-30"
+            id="inputNome"
+            placeholder="Digite o nome completo"
+          />
+          <small
+            class="text-danger"
+            *ngIf="
+              formGroupPessoas.get('nome')?.touched &&
+              formGroupPessoas.get('nome')?.invalid
+            "
+          >
+            O nome é obrigatório.
+          </small>
         </div>
+
         <div class="col-md-4">
           <label for="inputCep" class="form-label">CEP</label>
           <input
             formControlName="cep"
             type="text"
-            class="form-control"
+            class="form-control h-30"
             id="inputCep"
-            placeholder="09361-080"
+            placeholder="Apenas números"
+            (blur)="formatarCep(); buscarEndereco()"
           />
+          <small class="text-danger" *ngIf="cepNaoEncontrado">
+            CEP não encontrado, digite um cep válido.
+          </small>
         </div>
         <div class="col-md-8">
           <label for="inputEndereco" class="form-label">Endereço</label>
           <input
             formControlName="endereco"
             type="text"
-            class="form-control"
+            class="form-control h-30"
             id="inputEndereco"
-            placeholder="Rua Santos, 125"
           />
+          <small
+            class="text-danger"
+            *ngIf="
+              formGroupPessoas.get('endereco')?.touched &&
+              formGroupPessoas.get('endereco')?.invalid
+            "
+          >
+            O endereço é obrigatório.
+          </small>
         </div>
         <div class="col-md-10">
           <label for="inputCidade" class="form-label">Cidade</label>
           <input
             formControlName="cidade"
             type="text"
-            class="form-control"
+            class="form-control h-30"
             id="inputCidade"
-            placeholder="Sao Paulo"
           />
+          <small
+            class="text-danger"
+            *ngIf="
+              formGroupPessoas.get('cidade')?.touched &&
+              formGroupPessoas.get('cidade')?.invalid
+            "
+          >
+            A cidade é obrigatória.
+          </small>
         </div>
         <div class="col-md-2">
           <label for="inputUf" class="form-label">UF</label>
-          <input
-            formControlName="uf"
-            id="inputUf"
-            type="text"
-            class="form-control"
-            placeholder="SP"
-          />
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle form-control-lg"
+              type="button"
+              id="inputUf"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              {{ formGroupPessoas.get("uf")?.value }}
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="inputUf">
+              <li *ngFor="let uf of ufs">
+                <a class="dropdown-item" (click)="selectUF(uf.sigla)">
+                  {{ uf.sigla }}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            *ngIf="
+              formGroupPessoas.get('uf')?.invalid &&
+              formGroupPessoas.get('uf')?.touched
+            "
+            class="invalid-feedback"
+          >
+            UF é obrigatório!
+          </div>
         </div>
-        <div class="col-12 text-end">
+        <div class="col-12 text-center">
           <button
             type="submit"
-            class="btn btn-primary"
+            class="btn btn-primary btn-lg"
             [disabled]="!formGroupPessoas.valid"
           >
-            {{ id ? 'Editar' : 'Cadastrar' }}
+            {{ id ? "Editar" : "Cadastrar" }}
           </button>
         </div>
       </form>
