@@ -19,7 +19,12 @@ export class PessoasService {
     return this.http.get<Ipessoas[]>(this.url);
   }
 
+  adicionarPessoa(pessoa: Ipessoas): Observable<Ipessoas> {
+    return this.http.post<Ipessoas>(this.url, pessoa);
+  }
+
   deletarPessoa(id: number): Observable<void> {
     return this.http.delete<void>(`${this.url}/${id}`);
   }
+
 }

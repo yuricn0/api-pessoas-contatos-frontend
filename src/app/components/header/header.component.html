@@ -7,13 +7,31 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto" >
         <li class="nav-item">
-          <a class="nav-link" routerLink="" routerLinkActive="active">Pessoas cadastradas</a>
+          <a class="nav-link" routerLink="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="" routerLinkActive="active">Cadastrar pessoa</a>
+          <a class="nav-link" routerLink="/pessoas">Pessoas cadastradas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="#">Adicionar pessoa</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+<div *ngIf="exibirDiv" class="p-5 mt-3 text-center bg-body-tertiary rounded-3" >
+  <h1 class="text-body-emphasis">Bem-vindo à central de gerencimento de pessoas</h1>
+  <p class="col-lg-8 mx-auto fs-5 text-muted">
+    Aqui você pode gerenciar as pessoas cadastradas em nosso banco de dados.
+  </p>
+  <div class="d-inline-flex gap-2">
+    <a class="btn btn-primary"  routerLink="/cadastrar-pessoa">
+      <i class="fa fa-plus-circle" aria-hidden="true"> </i>  Adicionar Pessoa
+    </a>
+    <a class="btn btn-primary" routerLink="/pessoas">
+      <i class="fa fa-user" aria-hidden="true"></i> Listar Pessoas
+    </a>
+  </div>
+</div>
+
 
