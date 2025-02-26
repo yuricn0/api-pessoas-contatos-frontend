@@ -1,8 +1,9 @@
+import Swal from 'sweetalert2';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Ipessoas } from 'src/app/interfaces/ipessoas';
 import { PessoasService } from 'src/app/services/pessoas.service';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-editar-pessoas',
@@ -19,15 +20,41 @@ export class CadastrarEditarPessoasComponent {
 })
 
   constructor(private readonly pessoasService: PessoasService,
+              private readonly Router: Router,
               private readonly route: ActivatedRoute
   ) {}
+
+  id: number = 0
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    if (this.id) {
+      this.pessoasService.buscarPessoaPorId(this.id).subscribe(
+        (pessoa: Ipessoas) => {
+          // Preenche o formulário com os dados da pessoa
+          this.formGroupPessoas.patchValue(pessoa);
+        }
+      );
+    }
+  }
 
   cadastrarPessoa() {
     const pessoa: Ipessoas = this.formGroupPessoas.value;
 
-    this.pessoasService.adicionarPessoa(pessoa).subscribe( {
-      next: () => { console.log('Pessoa cadastrada com sucesso'); },
-      error: () => { console.log('Erro ao cadastrar pessoa'); }
-    })
+    this.pessoasService.cadastrarPessoa(pessoa).subscribe(() => {
+      Swal.fire('Sucesso', 'Pessoa cadastrada com sucesso!', 'success');
+      this.Router.navigate(['/pessoas']);
+    });
+  }
+
+  editarPessoa() {
+    const pessoa: Ipessoas = this.formGroupPessoas.value;
+
+    if (this.id) {
+      this.pessoasService.editarPessoa(this.id, pessoa).subscribe(() => {
+        Swal.fire('Sucesso', 'Pessoa editada com sucesso!', 'success');
+        this.Router.navigate(['/pessoas']);
+      });
+    }
   }
 }

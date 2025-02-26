@@ -1,52 +1,70 @@
-
-<form >
-<div class="mb-3" [formGroup]="formGroupPessoas" (submit)="cadastrarPessoa()">
-  <label for="nome" class="form-label">Nome</label>
-  <input
-    formControlName="nome"
-    type="text"
-    class="form-control"
-    id="nome"
-  />
+<div class="p-3 mt-2 text-center bg-body-tertiary rounded-3">
+  <h1 class="text-body-emphasis fs-1">
+    {{ id ? 'Editar' : 'CADASTRAR PESSOAS' }}
+  </h1>
 </div>
-<div class="mb-3">
-  <label for="cep" class="form-label">CEP</label>
-  <input
-    class="form-control"
-    id="cep"
-    rows="5"
-    formControlName="cep"
-  />
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form
+        class="row g-3"
+        [formGroup]="formGroupPessoas"
+        (ngSubmit)="id ? editarPessoa() : cadastrarPessoa()"
+      >
+        <div class="col-md-12">
+          <label for="inputNome" class="form-label">Nome</label>
+          <input formControlName="nome" type="text" class="form-control" id="inputNome" />
+        </div>
+        <div class="col-md-4">
+          <label for="inputCep" class="form-label">CEP</label>
+          <input
+            formControlName="cep"
+            type="text"
+            class="form-control"
+            id="inputCep"
+            placeholder="09361-080"
+          />
+        </div>
+        <div class="col-md-8">
+          <label for="inputEndereco" class="form-label">Endereço</label>
+          <input
+            formControlName="endereco"
+            type="text"
+            class="form-control"
+            id="inputEndereco"
+            placeholder="Rua Santos, 125"
+          />
+        </div>
+        <div class="col-md-10">
+          <label for="inputCidade" class="form-label">Cidade</label>
+          <input
+            formControlName="cidade"
+            type="text"
+            class="form-control"
+            id="inputCidade"
+            placeholder="Sao Paulo"
+          />
+        </div>
+        <div class="col-md-2">
+          <label for="inputUf" class="form-label">UF</label>
+          <input
+            formControlName="uf"
+            id="inputUf"
+            type="text"
+            class="form-control"
+            placeholder="SP"
+          />
+        </div>
+        <div class="col-12 text-end">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            [disabled]="!formGroupPessoas.valid"
+          >
+            {{ id ? 'Editar' : 'Cadastrar' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-<div class="mb-3">
-  <label for="endereco" class="form-label">Endereço</label>
-  <input
-    class="form-control"
-    id="endereco"
-    formControlName="endereco"
-  />
-</div>
-<div class="mb-3">
-  <label for="cidade" class="form-label">Cidade</label>
-  <input
-    class="form-control"
-    id="cidade"
-    formControlName="cidade"
-  />
-</div>
-<div class="mb-1">
-  <label for="uf" class="form-label">UF</label>
-  <input
-    class="form-control"
-    id="uf"
-    formControlName="uf"
-  />
-</div>
-<button
-  type="submit"
-  class="btn btn-primary"
-  [disabled]="!formGroupPessoas.valid"
->
-<!-- {{ id ? 'Editar' : 'Cadastrar' }} -->
-</button>
-</form>

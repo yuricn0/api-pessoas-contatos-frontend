@@ -19,7 +19,11 @@ export class PessoasService {
     return this.http.get<Ipessoas[]>(this.url);
   }
 
-  adicionarPessoa(pessoa: Ipessoas): Observable<Ipessoas> {
+  buscarPessoaPorId(id: number): Observable<Ipessoas> {
+    return this.http.get<Ipessoas>(`${this.url}/${id}`);
+  }
+
+  cadastrarPessoa(pessoa: Ipessoas): Observable<Ipessoas> {
     return this.http.post<Ipessoas>(this.url, pessoa);
   }
 
@@ -27,4 +31,7 @@ export class PessoasService {
     return this.http.delete<void>(`${this.url}/${id}`);
   }
 
+  editarPessoa(id: number, pessoa: Ipessoas) {
+    return this.http.put(`${this.url}/${id}`, pessoa);
+  }
 }

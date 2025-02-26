@@ -9,6 +9,9 @@ const routes: Routes = [
   },
   {
     path: 'cadastrar-pessoa', component: CadastrarEditarPessoasComponent
+  },
+  {
+    path: 'editar-pessoa/:id', component: CadastrarEditarPessoasComponent
   }
 ];
 
