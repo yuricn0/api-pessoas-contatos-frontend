@@ -13,9 +13,10 @@ export class ListagemPessoasComponent {
   pessoasFiltradas: IPessoas[] = [];
   filtroNome: string = '';
 
-
-  constructor(private readonly pessoasService: PessoasService,
-              private readonly cdRef: ChangeDetectorRef) {}
+  constructor(
+    private readonly pessoasService: PessoasService,
+    private readonly cdRef: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.carregarPessoas();
@@ -47,16 +48,15 @@ export class ListagemPessoasComponent {
       confirmButtonText: 'Sim, excluir!',
       cancelButtonText: 'Cancelar',
     }).then((result) => {
-        if (result.isConfirmed) {
-          this.pessoasService.deletarPessoa(id).subscribe(() => {
-            this.pessoas = this.pessoas.filter((pessoa) => pessoa.id !== id);
-            this.pessoasFiltradas = [...this.pessoas];
-          });
+      if (result.isConfirmed) {
+        this.pessoasService.deletarPessoa(id).subscribe(() => {
+          this.pessoas = this.pessoas.filter((pessoa) => pessoa.id !== id);
+          this.pessoasFiltradas = [...this.pessoas];
+        });
         Swal.fire('Feito!', 'A pessoa foi deletada com sucesso.', 'success');
       }
     });
   }
-
 
   filtrarPessoas(): void {
     if (!this.filtroNome) {
