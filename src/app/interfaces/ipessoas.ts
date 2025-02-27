@@ -1,4 +1,4 @@
-import { Icontatos } from "./icontatos";
+import { Icontatos } from './icontatos';
 
 export interface IPessoas {
   id: number;

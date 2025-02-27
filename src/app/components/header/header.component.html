@@ -1,11 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="">Gestão de Pessoas</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto" >
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/">Home</a>
         </li>
@@ -19,19 +27,3 @@
     </div>
   </div>
 </nav>
-<div *ngIf="exibirDiv" class="p-5 mt-3 text-center bg-body-tertiary rounded-3" >
-  <h1 class="text-body-emphasis">Bem-vindo à central de gerencimento de pessoas</h1>
-  <p class="col-lg-8 mx-auto fs-5 text-muted">
-    Aqui você pode gerenciar as pessoas cadastradas em nosso banco de dados.
-  </p>
-  <div class="d-inline-flex gap-2">
-    <a class="btn btn-primary"  routerLink="/cadastrar-pessoa">
-      <i class="fa fa-plus-circle" aria-hidden="true"> </i>  Cadastrar Pessoa
-    </a>
-    <a class="btn btn-primary" routerLink="/pessoas">
-      <i class="fa fa-user" aria-hidden="true"></i> Listar Pessoas
-    </a>
-  </div>
-</div>
-
-

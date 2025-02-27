@@ -5,13 +5,12 @@ import { environment } from 'src/environments/environment';
 import { IViaCep } from '../interfaces/iviacep';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ViaCepService {
-
   urlViaCep = environment.viaApiUrl;
 
-  constructor(private readonly http:HttpClient) { }
+  constructor(private readonly http: HttpClient) {}
 
   buscarEndereco(cep: string): Observable<IViaCep> {
     return this.http.get<IViaCep>(`${this.urlViaCep}/${cep}/json`);

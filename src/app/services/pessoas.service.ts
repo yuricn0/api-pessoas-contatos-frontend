@@ -5,17 +5,15 @@ import { IPessoas } from '../interfaces/ipessoas';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PessoasService {
-
   url = environment.url;
 
-
-  constructor(private readonly http:HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   buscarTodasPessoas(): Observable<IPessoas[]> {
-    console.log("API Funcionando");
+    console.log('API Funcionando');
     return this.http.get<IPessoas[]>(this.url);
   }
 

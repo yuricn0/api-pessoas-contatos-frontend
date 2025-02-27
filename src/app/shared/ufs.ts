@@ -25,5 +25,5 @@ export const UFS = [
   { sigla: 'SC', nome: 'Santa Catarina' },
   { sigla: 'SP', nome: 'São Paulo' },
   { sigla: 'SE', nome: 'Sergipe' },
-  { sigla: 'TO', nome: 'Tocantins' }
+  { sigla: 'TO', nome: 'Tocantins' },
 ];

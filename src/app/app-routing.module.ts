@@ -5,18 +5,21 @@ import { CadastrarEditarPessoasComponent } from './pages/pessoas/cadastrar-edita
 
 const routes: Routes = [
   {
-    path: 'pessoas', component: ListagemPessoasComponent
+    path: 'pessoas',
+    component: ListagemPessoasComponent,
   },
   {
-    path: 'cadastrar-pessoa', component: CadastrarEditarPessoasComponent
+    path: 'cadastrar-pessoa',
+    component: CadastrarEditarPessoasComponent,
   },
   {
-    path: 'editar-pessoa/:id', component: CadastrarEditarPessoasComponent
-  }
+    path: 'editar-pessoa/:id',
+    component: CadastrarEditarPessoasComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -57,7 +57,21 @@ export class CadastrarEditarPessoasComponent {
 
     this.pessoasService.cadastrarPessoa(pessoa).subscribe(() => {
       Swal.fire('Sucesso', 'Pessoa cadastrada com sucesso!', 'success');
-      this.Router.navigate(['/pessoas']);
+      Swal.fire({
+        title: 'Cadastro realizado!',
+        text: 'Deseja cadastrar uma nova pessoa?',
+        icon: 'success',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Cadastrar',
+        cancelButtonText: 'Voltar',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.formGroupPessoas.reset();
+        } else {
+          this.Router.navigate(['/pessoas']);
+        }
+      });
     });
   }
 
