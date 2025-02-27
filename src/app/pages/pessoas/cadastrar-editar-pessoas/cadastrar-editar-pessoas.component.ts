@@ -110,4 +110,8 @@ export class CadastrarEditarPessoasComponent {
   selectUF(uf: string) {
     this.formGroupPessoas.patchValue({ uf });
   }
+
+  cancelar() {
+    this.Router.navigate(['/pessoas']);
+  }
 }

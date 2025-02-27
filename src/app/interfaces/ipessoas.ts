@@ -1,3 +1,5 @@
+import { Icontatos } from "./icontatos";
+
 export interface IPessoas {
   id: number;
   nome: string;
@@ -5,4 +7,5 @@ export interface IPessoas {
   cep: string;
   cidade: string;
   uf: string;
+  contatos: Array<Icontatos>;
 }

@@ -114,13 +114,16 @@
             UF é obrigatório!
           </div>
         </div>
-        <div class="col-12 text-center">
+        <div class="col-12 text-end">
           <button
             type="submit"
-            class="btn btn-primary btn-lg"
+            class="btn btn-primary"
             [disabled]="!formGroupPessoas.valid"
           >
             {{ id ? "Editar" : "Cadastrar" }}
+          </button>
+          <button type="button" class="btn btn-secondary ms-2" (click)="cancelar()">
+            Cancelar
           </button>
         </div>
       </form>

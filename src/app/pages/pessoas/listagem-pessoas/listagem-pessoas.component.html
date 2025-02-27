@@ -19,7 +19,14 @@
       <td>{{ pessoa.cep }}</td>
       <td>{{ pessoa.cidade }}</td>
       <td>{{ pessoa.uf }}</td>
-      <td>pessoa.contato</td>
+      <td>
+        <ng-container *ngIf="pessoa.contatos && pessoa.contatos.length > 0">
+          {{ pessoa.contatos[0].contato }}
+        </ng-container>
+        <ng-container *ngIf="!pessoa.contatos || pessoa.contatos.length === 0">
+          Nenhum celular disponível
+        </ng-container>
+      </td>
       <td>
         <a class="btn btn-primary me-4" [routerLink]="['/editar-pessoa', pessoa.id]">
           <i class="fa fa-pencil" aria-hidden="true"></i>

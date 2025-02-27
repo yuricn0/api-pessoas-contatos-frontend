@@ -15,8 +15,17 @@ export class ListagemPessoasComponent {
   constructor(private readonly pessoasService: PessoasService) { }
 
   ngOnInit(): void {
+    this.carregarPessoas();
+  }
+
+  carregarPessoas(): void {
     this.pessoasService.buscarTodasPessoas().subscribe((data: IPessoas[]) => {
-      this.pessoas = data;
+      this.pessoas = data.map(pessoa => {
+        const contatosFiltrados = pessoa.contatos.filter(contato => contato.tipoContato === 'CELULAR');
+        pessoa.contatos = contatosFiltrados;
+
+        return pessoa;
+      });
     });
   }
 
