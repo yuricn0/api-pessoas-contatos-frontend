@@ -11,7 +11,7 @@
 6. [Funcionalidades Futuras](#funcionalidades-futuras)
 
 ## Introdução
-Aplicação front-end projetada para gerenciamento de pessoa, oferecendo recursos para cadastro, atualização, exclusão e consulta de dados. Seguindo as melhores práticas de desenvolvimento com o framework Angular, a aplicação garante uma organização eficiente e estruturada das informações.
+Aplicação front-end projetada para gerenciamento de pessoas, oferecendo recursos para cadastro, atualização, exclusão e consulta de dados. Seguindo as melhores práticas de desenvolvimento com o framework Angular, a aplicação garante uma organização eficiente e estruturada das informações.
 
 ## Tecnologias Utilizadas
 - Angular CLI: 16.2.16
@@ -48,7 +48,7 @@ A estrutura da aplicação foi organizada de forma modular para garantir clareza
 
 - **src/app/shared**: Contém a lista das UFs que são utilizadas no botão dropdown.
 
-- **src/enviroments**: Contém as urls que são utilizadas das APIs.
+- **src/enviroments**: Contém as urls que são utilizadas nas APIs.
 
 ## Executando o projeto
 
