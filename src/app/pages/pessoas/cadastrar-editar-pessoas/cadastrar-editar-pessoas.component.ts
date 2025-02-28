@@ -52,6 +52,17 @@ export class CadastrarEditarPessoasComponent {
     }
   }
 
+  editarPessoa() {
+    const pessoa: IPessoas = this.formGroupPessoas.value;
+
+    if (this.id) {
+      this.pessoasService.editarPessoa(this.id, pessoa).subscribe(() => {
+        Swal.fire('Sucesso', 'Pessoa editada com sucesso!', 'success');
+        this.Router.navigate(['/pessoas']);
+      });
+    }
+  }
+
   cadastrarPessoa() {
     const pessoa: IPessoas = this.formGroupPessoas.value;
 
@@ -75,16 +86,7 @@ export class CadastrarEditarPessoasComponent {
     });
   }
 
-  editarPessoa() {
-    const pessoa: IPessoas = this.formGroupPessoas.value;
 
-    if (this.id) {
-      this.pessoasService.editarPessoa(this.id, pessoa).subscribe(() => {
-        Swal.fire('Sucesso', 'Pessoa editada com sucesso!', 'success');
-        this.Router.navigate(['/pessoas']);
-      });
-    }
-  }
 
   buscarEndereco() {
     const cep = this.formGroupPessoas.get('cep')?.value;
