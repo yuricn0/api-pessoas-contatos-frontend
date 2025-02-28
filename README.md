@@ -27,9 +27,22 @@ Telas da aplicação:
 
 - `http://localhost:4200/`: Tela Home.
 
+![Tela_home](https://github.com/user-attachments/assets/8b992e93-5afd-4894-9045-a5d389b093cb)
+
+
 - `http://localhost:4200/cadastrar-pessoa`: Tela de Cadastro de Pessoas.
+
+![Tela_cadastro](https://github.com/user-attachments/assets/d6ba2e58-3729-4d8e-bb81-22e258f4123b)
+
+
 - `http://localhost:4200/editar-pessoa/{id}`: Tela de Edição de Pessoas.
+
+![Tela_Edicao](https://github.com/user-attachments/assets/4ff0ca38-686e-49a3-8f85-9a2b5e091b4d)
+
+
 - `http://localhost:4200/pessoas`: Tela de Listagem de Pessoas.
+
+![Tela_Listagem](https://github.com/user-attachments/assets/85ac220e-f0a5-4736-a147-ab481fa30823)
 
 
 ## Estrutura da Aplicação
