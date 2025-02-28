@@ -8,7 +8,7 @@ import { IViaCep } from '../interfaces/iviacep';
   providedIn: 'root',
 })
 export class ViaCepService {
-  urlViaCep = environment.viaApiUrl;
+  urlViaCep = environment.urlViaCepApi;
 
   constructor(private readonly http: HttpClient) {}
 

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class PessoasService {
-  url = environment.url;
+  url = environment.urlPessoasApi;
 
   constructor(private readonly http: HttpClient) {}
 

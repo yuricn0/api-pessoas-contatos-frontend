@@ -122,13 +122,13 @@
           >
             {{ id ? "Editar" : "Cadastrar" }}
           </button>
-          <button
+          <a
             type="button"
             class="btn btn-secondary ms-2"
-            (click)="cancelar()"
+            routerLink="/pessoas"
           >
             Cancelar
-          </button>
+          </a>
         </div>
       </form>
     </div>

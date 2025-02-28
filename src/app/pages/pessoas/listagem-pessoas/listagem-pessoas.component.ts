@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
 import { IPessoas } from 'src/app/interfaces/ipessoas';
 import { PessoasService } from 'src/app/services/pessoas.service';
@@ -14,8 +14,7 @@ export class ListagemPessoasComponent {
   filtroNome: string = '';
 
   constructor(
-    private readonly pessoasService: PessoasService,
-    private readonly cdRef: ChangeDetectorRef
+    private readonly pessoasService: PessoasService
   ) {}
 
   ngOnInit(): void {

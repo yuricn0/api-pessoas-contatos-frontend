@@ -90,20 +90,18 @@ export class CadastrarEditarPessoasComponent {
     const cep = this.formGroupPessoas.get('cep')?.value;
 
     if (cep) {
-      this.cepService
-        .buscarEndereco(cep.replace('-', ''))
-        .subscribe((dados: IViaCep) => {
-          if (dados && !dados.erro) {
-            this.cepNaoEncontrado = false;
-            this.formGroupPessoas.patchValue({
-              endereco: dados.logradouro,
-              cidade: dados.localidade,
-              uf: dados.uf,
-            });
-          } else {
-            this.cepNaoEncontrado = true;
-          }
-        });
+      this.cepService.buscarEndereco(cep).subscribe((dados: IViaCep) => {
+        if (dados && !dados.erro) {
+          this.cepNaoEncontrado = false;
+          this.formGroupPessoas.patchValue({
+            endereco: dados.logradouro,
+            cidade: dados.localidade,
+            uf: dados.uf,
+          });
+        } else {
+          this.cepNaoEncontrado = true;
+        }
+      });
     }
   }
 
@@ -123,9 +121,5 @@ export class CadastrarEditarPessoasComponent {
 
   selectUF(uf: string) {
     this.formGroupPessoas.patchValue({ uf });
-  }
-
-  cancelar() {
-    this.Router.navigate(['/pessoas']);
   }
 }
