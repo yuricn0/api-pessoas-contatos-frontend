@@ -107,5 +107,5 @@ Isso iniciará a aplicação Angular. Se tudo estiver configurado corretamente, 
 
 ## Funcionalidades Futuras 
 
-- Adicionar estilizações personalizadas nas páginas
+- Adicionar paginação para controlar o tamanho da tabela.
 - Adicionar no formulário o campo "Contato" adicionando a API de contatos.
