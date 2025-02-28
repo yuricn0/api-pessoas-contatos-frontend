@@ -82,11 +82,15 @@ Isso iniciará a aplicação Angular. Se tudo estiver configurado corretamente, 
    
 - [Eclipse](https://eclipseide.org/)
 
-4. Execute a aplicação
+5. Compile a aplicação
 
-  ```bash
-  mvn run
-  ```
+   ```bash
+   mvn clean install
+   
+6. Execute a aplicação
+
+   ```bash
+   mvn spring-boot:run
 
 ## Funcionalidades Futuras 
 
