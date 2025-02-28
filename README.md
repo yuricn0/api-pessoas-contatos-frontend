@@ -1,32 +1,94 @@
-<<<<<<< HEAD
-# GerenciamentoDePessoas
+# Cadastro e Gerenciamento de Pessoas e Contatos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+## Índice
+1. [Introdução](#introdução)
+2. [Tecnologias Utilizadas](#tecnologias-utilizadas)
+3. [Telas](#telas)
+4. [Estrutura da Aplicação](#estrutura-da-aplicação)
+5. [Executando o Projeto](#executando-o-projeto)
+   - [Passos](#passos)
+   - [Back-end](#back-end)
+6. [Funcionalidades Futuras](#funcionalidades-futuras)
 
-## Development server
+## Introdução
+Aplicação front-end projetada para gerenciamento de pessoa, oferecendo recursos para cadastro, atualização, exclusão e consulta de dados. Seguindo as melhores práticas de desenvolvimento com o framework Angular, a aplicação garante uma organização eficiente e estruturada das informações.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias Utilizadas
+- Angular CLI: 16.2.16
+- Node: 18.20.6
+- Package Manager: npm 10.2.4
+- HTML / SCSS / Typescript
+- Visual Studio Code (Ambiente de Desenvolvimento)
+- SweetAlert2 (Alertas Personalizados)
+- Font Awesome (Biblioteca de ícones)
 
-## Code scaffolding
+## Telas
+Telas da aplicação
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `http://localhost:4200/`: Tela Home.
 
-## Build
+- `http://localhost:4200/cadastrar-pessoa`: Tela de Cadastro de Pessoas.
+- `http://localhost:4200/editar-pessoa/{id}`: Tela de Edição de Pessoas.
+- `http://localhost:4200/pessoas`: Tela de Listagem de Pessoas.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Estrutura da Aplicação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A estrutura da aplicação foi organizada de forma modular para garantir clareza, escalabilidade e manutenção eficiente, utilizando o framework Angular. A seguir, uma descrição dos arquivos da aplicação:
 
-## Running end-to-end tests
+- **src/app**: Contém todo o código-fonte principal da aplicação, incluindo componentes, páginas, serviços e configurações gerais.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **src/app/components**: Armazena componentes da aplicação.
 
-## Further help
+- **src/app/interfaces**: Contém interfaces TypeScript utilizadas para definir a estrutura dos dados e garantir a tipagem segura na aplicação.
+   
+- **src/app/pages**: Guarda os módulos e componentes que representam as páginas da aplicação, organizando a navegação.
+   
+- **src/app/services**: Contém os serviços responsáveis pela comunicação com as APIs.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# api-pessoas-contatos-frontend
-Front-end da api de gerenciamento de pessoas e contatos.
->>>>>>> 138750c93ef6e57b1c1f59256e7d2dd619ebf33e
+- **src/app/shared**: Contém a lista das UFs que são utilizadas no botão dropdown.
+
+- **src/enviroments**: Contém as urls que são utilizadas das APIs.
+
+## Executando o projeto
+
+### Passos
+1. Clone o repositório:
+   
+   ```bash
+   git clone https://github.com/yuricn0/api-pessoas-contatos-frontend.git 
+
+3. Abra no Vscode ou na IDE de sua prefêrencia:
+   
+ - [VsCode](https://code.visualstudio.com/)
+
+3. Execute a aplicação.
+
+   ```bash
+   ng serve
+   
+Isso iniciará a aplicação Angular. Se tudo estiver configurado corretamente, você poderá acessar a aplicação no endereço http://localhost:4200/
+
+## Back-end
+
+1. O repositório da API utilizada nesse projeto front-end, encontra-se nesse endereço: https://github.com/yuricn0/api-pessoas-contatos
+
+2. Clone o repositório:
+   
+   ```bash
+   git clone https://github.com/yuricn0/api-pessoas-contatos.git
+
+4. Abra no Eclipse ou na IDE de sua preferência:
+   
+- [Eclipse](https://eclipseide.org/)
+
+4. Execute a aplicação
+
+  ```bash
+  mvn run
+  ```
+
+## Funcionalidades Futuras 
+
+- Adicionar estilizações personalizadas nas páginas
+- Adicionar no formulário o campo "Contato" adicionando a API de contatos.
