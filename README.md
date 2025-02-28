@@ -1,4 +1,4 @@
-# Cadastro e Gerenciamento de Pessoas e Contatos
+# Cadastro e Gerenciamento de Pessoas
 
 ## Índice
 1. [Introdução](#introdução)
@@ -6,7 +6,7 @@
 3. [Telas](#telas)
 4. [Estrutura da Aplicação](#estrutura-da-aplicação)
 5. [Executando o Projeto](#executando-o-projeto)
-   - [Passos](#passos)
+   - [Front-end](#front-end)
    - [Back-end](#back-end)
 6. [Funcionalidades Futuras](#funcionalidades-futuras)
 
@@ -23,7 +23,7 @@ Aplicação front-end projetada para gerenciamento de pessoa, oferecendo recurso
 - Font Awesome (Biblioteca de ícones)
 
 ## Telas
-Telas da aplicação
+Telas da aplicação:
 
 - `http://localhost:4200/`: Tela Home.
 
@@ -52,7 +52,7 @@ A estrutura da aplicação foi organizada de forma modular para garantir clareza
 
 ## Executando o projeto
 
-### Passos
+### Front-end 
 1. Clone o repositório:
    
    ```bash
@@ -69,7 +69,7 @@ A estrutura da aplicação foi organizada de forma modular para garantir clareza
    
 Isso iniciará a aplicação Angular. Se tudo estiver configurado corretamente, você poderá acessar a aplicação no endereço http://localhost:4200/
 
-## Back-end
+### Back-end
 
 1. O repositório da API utilizada nesse projeto front-end, encontra-se nesse endereço: https://github.com/yuricn0/api-pessoas-contatos
 
