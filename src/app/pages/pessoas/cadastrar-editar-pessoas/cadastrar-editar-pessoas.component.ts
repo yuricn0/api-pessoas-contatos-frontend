@@ -86,8 +86,6 @@ export class CadastrarEditarPessoasComponent {
     });
   }
 
-
-
   buscarEndereco() {
     const cep = this.formGroupPessoas.get('cep')?.value;
 

@@ -13,9 +13,7 @@ export class ListagemPessoasComponent {
   pessoasFiltradas: IPessoas[] = [];
   filtroNome: string = '';
 
-  constructor(
-    private readonly pessoasService: PessoasService
-  ) {}
+  constructor(private readonly pessoasService: PessoasService) {}
 
   ngOnInit(): void {
     this.carregarPessoas();
