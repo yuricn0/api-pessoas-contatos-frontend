@@ -75,7 +75,12 @@ A estrutura da aplicação foi organizada de forma modular para garantir clareza
    
  - [VsCode](https://code.visualstudio.com/)
 
-3. Execute a aplicação.
+3. Instale as dependências.
+
+   ```bash
+   npm install
+
+4. Execute a aplicação.
 
    ```bash
    ng serve
